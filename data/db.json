@@ -1,0 +1,46 @@
+{
+  "Dummy_EXPENSE": [
+    {
+      "id": 1,
+      "title": "school fee",
+      "amount": 250,
+      "date": "Tue Nov 16 2021 14:36:08 GMT+0530 (India Standard Time)"
+    },
+    {
+      "id": 2,
+      "title": "Books",
+      "amount": 230,
+      "date": "Wed Nov 17 2021 15:36:08 GMT+0530 (India Standard Time)"
+    },
+    {
+      "id": 3,
+      "title": "House Rent",
+      "amount": 700,
+      "date": "Thu Nov 18 2021 16:36:08 GMT+0530 (India Standard Time)"
+    },
+    {
+      "id": "e4",
+      "title": "savings",
+      "amount": 300,
+      "date": "Fri Nov 19 2021 17:36:08 GMT+0530 (India Standard Time)"
+    },
+    {
+      "title": "clothes",
+      "amount": "100",
+      "date": "2023-10-20T00:00:00.000Z",
+      "id": "0.01919224991939883"
+    },
+    {
+      "title": "Netflix",
+      "amount": "800",
+      "date": "2023-10-11T00:00:00.000Z",
+      "id": "0.48487422679920056"
+    },
+    {
+      "title": "travel",
+      "amount": "500",
+      "date": "2023-10-20T00:00:00.000Z",
+      "id": "0.7323158819326983"
+    }
+  ]
+}

@@ -1,46 +1,55 @@
-import React,{useState}  from 'react';
+import React,{useEffect, useState}  from 'react';
 
 import NewExpense from './components/Expenses/NewExpense/NewExpense';
 
 import Expenses from './components/Expenses/Expenses';
 
 
-let Dummy_EXPENSE=[
-    {
-        id:'e1',
-        title:'school fee',
-        amount: 250,
-        date: new Date(2021,5,12)
-    },
-    {
-        id:'e2',
-        title:'Books',
-        amount: 230,
-        date: new Date(2021,2,22)
-    },
-    {
-        id:'e3',
-        title:'House Rent',
-        amount: 700,
-        date: new Date(2021,4,2)
-    },
-    {
-        id:'e4',
-        title:'savings',
-        amount: 300,
-        date: new Date(2023,15,22)
-    }
-];
+let Dummy_EXPENSE=[];
 
 const App = () => {
     
     const [expenses, setExpenses] = useState(Dummy_EXPENSE);
+
+    function fetchData(){
+        fetch('http://localhost:3500/Dummy_EXPENSE')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // Assuming you expect JSON data
+    })
+    .then(data => {
+       /* console.log(data); */
+        setExpenses(data);
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
+
+    }
+
+     useEffect(() =>{
+        fetchData();
+     },[])
+
+    
   
 
     const addExpenseHandler = (expense) => {
-        const updatedExpenses = [expense, ...expenses ]
-         setExpenses(updatedExpenses)
-    }
+        fetch('http://localhost:3500/Dummy_EXPENSE',{
+            method: 'POST',
+            body: JSON.stringify(expense),
+            headers: {
+                'content-Type':'application/json'
+            }
+        }).then(
+            response => {
+                fetchData();
+
+            }
+        )
+    };
 
     return (
             <div>
